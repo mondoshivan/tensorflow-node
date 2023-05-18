@@ -1,0 +1,37 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "options": {
+    "env": {}
+  },
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "path": "./",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "npm run build",
+      "detail": "Transpiles TS scripts to JS."
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "path": "./",
+      "group": {
+        "kind": "none",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "npm start",
+      "detail": "Starts the application.",
+      "dependsOn": [
+        "npm run build"
+      ]
+    }
+  ]
+}
